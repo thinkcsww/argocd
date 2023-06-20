@@ -4,7 +4,8 @@ metadata:
   name: issue-ingress
 spec:
   rules:
-  - http:
+  - host: example.com
+    http:
       paths:
       - path: /
         pathType: ImplementationSpecific
