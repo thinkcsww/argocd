@@ -12,6 +12,6 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: testapp
+            name: argocd-server
             port:
               number: 8080
