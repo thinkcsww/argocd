@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: issue-ingress
+  ingressClassName: k8s.io/ingress-nginx
 spec:
   rules:
   - host: example.com
