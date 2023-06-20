@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: issue-ingress
 spec:
-  ingressClassName: k8s.io/ingress-nginx
+  ingressClassName: ingress-nginx
   rules:
   - host: example.com
     http:
