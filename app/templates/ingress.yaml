@@ -8,5 +8,7 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: testapp
-          servicePort: 80
+          service:
+            name: testapp
+            port:
+              number: 80
