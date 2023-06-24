@@ -90,6 +90,5 @@ redisSession:
     size: 1Gi
     storageClassName: general
   service:
-    type: ClusterIP
-    nodePort:
+    type: NodePort
   password: ZGplbWFsc3B3ZDEyMyFAIw==
