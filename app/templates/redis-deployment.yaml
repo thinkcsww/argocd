@@ -7,7 +7,6 @@ metadata:
   labels:
     app: {{ .Values.redisSession.name }}
 spec:
-  storageClassName: {{ .Values.redisSession.volume.storageClassName }}
   accessModes:
     - ReadWriteOnce
   resources:
