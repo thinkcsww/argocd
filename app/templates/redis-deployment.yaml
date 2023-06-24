@@ -45,7 +45,7 @@ spec:
                 valueFrom:
                   secretKeyRef:
                     key: REDIS_PASSWORD
-                    name: kic-admin-secret
+                    name: secret
       volumes:
         - name: data
           persistentVolumeClaim:
