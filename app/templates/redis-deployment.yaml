@@ -1,0 +1,82 @@
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  namespace: {{ .Values.namespace }}
+  name: {{ .Values.redisSession.name }}-pvc
+  labels:
+    app: {{ .Values.redisSession.name }}
+spec:
+  storageClassName: {{ .Values.redisSession.volume.storageClassName }}
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.redisSession.volume.size }}
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.redisSession.name }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Values.redisSession.name }}
+spec:
+  replicas: {{ .Values.redisSession.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ .Values.redisSession.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.redisSession.name }}
+    spec:
+{{/*      serviceAccountName: {{ .Values.cspAdminServiceAccount }}*/}}
+      containers:
+        - name: {{ .Values.redisSession.name }}
+          image: {{ .Values.redisSession.image }}
+          imagePullPolicy: {{ .Values.redisSession.pullPolicy }}
+          command: ["redis-server", "--requirepass", "$(password)"]
+          volumeMounts:
+            - name: data
+              mountPath: /data
+          env:
+              - name: password
+                valueFrom:
+                  secretKeyRef:
+                    key: REDIS_PASSWORD
+                    name: kic-admin-secret
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: {{ .Values.redisSession.name }}-pvc
+      {{- with .Values.redisSession.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.redisSession.name }}-svc
+  namespace: {{ .Values.namespace }}
+  labels:
+    app: {{ .Values.redisSession.name }}
+spec:
+  selector:
+    app: {{ .Values.redisSession.name }}
+  type: {{ .Values.redisSession.service.type }}
+  ports:
+    - name: {{ .Values.redisSession.name }}
+      protocol: TCP
+      port: 6379
+      targetPort: 6379
+      {{ if eq .Values.redisSession.service.type "NodePort" }}
+      nodePort: {{ .Values.redisSession.service.nodePort }}
+      {{- end }}
+
+
