@@ -15,10 +15,3 @@ spec:
             name: testapp
             port:
               number: 80
-      - path: /redis
-        pathType: ImplementationSpecific
-        backend:
-          service:
-            name: redis-svc
-            port:
-              number: 6379
