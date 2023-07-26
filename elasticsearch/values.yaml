@@ -260,7 +260,7 @@ ingress:
   className: "nginx"
   pathtype: ImplementationSpecific
   hosts:
-    - host: app.oblivion.com
+    - host: es.oblivion.com
       paths:
         - path: /
   tls: []
