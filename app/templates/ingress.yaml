@@ -13,6 +13,6 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: testapp
+            name: app
             port:
               number: 80
