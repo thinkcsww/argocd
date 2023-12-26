@@ -5,6 +5,10 @@ metadata:
   namespace: {{ .Values.namespace }}
 spec:
   ingressClassName: nginx
+  tls:
+    - hosts:
+      - oblivion.com
+      secretName: tlssecret
   rules:
   - host: app.oblivion.com
     http:
