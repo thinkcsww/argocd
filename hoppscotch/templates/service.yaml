@@ -15,6 +15,25 @@ spec:
   selector:
     app: hoppscotch-frontend
 
+apiVersion: v1
+kind: Service
+metadata:
+  name: hoppscotch-admin-svc
+  namespace: gqms
+  labels:
+    app: hoppscotch-admin
+spec:
+  ports:
+    - name: hoppscotch-admin-svc
+      port: 3100
+      targetPort: 3100
+      protocol: TCP
+      
+  selector:
+    app: hoppscotch-admin
+
+
+--- 
 
 --- 
 
@@ -34,3 +53,21 @@ spec:
       
   selector:
     app: hoppscotch-backend
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: hoppscotch-postgres-svc
+  namespace: gqms
+  labels:
+    app: hoppscotch-postgres
+spec:
+  ports:
+    - port: 5432
+      targetPort: 5432
+      protocol: TCP
+      name: http
+  selector:
+    app: hoppscotch-postgres

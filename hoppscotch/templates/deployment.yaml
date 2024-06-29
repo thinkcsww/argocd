@@ -25,6 +25,36 @@ spec:
             - name: http
               containerPort: 3000
               protocol: TCP
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hoppscotch-admin
+  namespace: gqms
+  labels:
+    app: hoppscotch-admin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hoppscotch-admin
+  template:
+    metadata:
+      labels:
+        app: hoppscotch-admin
+    spec:
+      containers:
+        - name: hoppscotch-admin
+          image: hoppscotch/hoppscotch-admin
+          envFrom:
+            - configMapRef:
+                name: hoppscotch
+          ports:
+            - name: http
+              containerPort: 3100
+              protocol: TCP
+
 --- 
 
 apiVersion: apps/v1
@@ -54,3 +84,58 @@ spec:
             - name: http
               containerPort: 3170
               protocol: TCP
+
+--- 
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hoppscotch-postgres
+  namespace: gqms
+  labels:
+    app: hoppscotch-postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hoppscotch-postgres
+  template:
+    metadata:
+      labels:
+        app: hoppscotch-postgres
+    spec:
+      containers:
+        - name: hoppscotch-postgres
+          image: postgres:15-bullseye
+          envFrom:
+            - configMapRef:
+                name: hoppscotch
+          ports:
+            - name: postgres
+              containerPort: 5432
+              protocol: TCP
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: hoppscotch-postgres-pvc
+
+--- 
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  namespace: gqms
+  name: hoppscotch-postgres-pvc
+  labels:
+    app: hoppscotch-postgres
+spec:
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 1Gi
+
+
