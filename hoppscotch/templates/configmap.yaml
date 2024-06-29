@@ -26,13 +26,13 @@ data:
   REFRESH_TOKEN_VALIDITY: "604800000"
   SESSION_SECRET: anothersecretcode123
   TOKEN_SALT_COMPLEXITY: "10"
-  VITE_ADMIN_URL: https://hoppscotch.oblivion.com:3100
+  VITE_ADMIN_URL: https://hoppscotch-admin.oblivion.com
   VITE_ALLOWED_AUTH_PROVIDERS: GOOGLE,GITHUB,MICROSOFT,EMAIL
   VITE_APP_PRIVACY_POLICY_LINK: https://docs.hoppscotch.io/support/privacy
   VITE_APP_TOS_LINK: https://docs.hoppscotch.io/support/terms
-  VITE_BACKEND_API_URL: https://hoppscotch.oblivion.com:3170/v1
-  VITE_BACKEND_GQL_URL: https://hoppscotch.oblivion.com:3170/graphql
-  VITE_BACKEND_WS_URL: https://hoppscotch.oblivion.com:3170/graphql
+  VITE_BACKEND_API_URL: https://hoppscotch-api.oblivion.com/v1
+  VITE_BACKEND_GQL_URL: https://hoppscotch-api.oblivion.com/graphql
+  VITE_BACKEND_WS_URL: https://hoppscotch-api.oblivion.com/graphql
   VITE_BASE_URL: https://hoppscotch.oblivion.com
   VITE_SHORTCODE_BASE_URL: https://hoppscotch.oblivion.com
   WHITELISTED_ORIGINS: http://hoppscotch.app.oblivion, https://hoppscotch.app.oblivion
