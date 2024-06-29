@@ -2,6 +2,9 @@ apiVersion: v1
 data:
   ACCESS_TOKEN_VALIDITY: "86400000"
   DATABASE_URL: postgresql://postgres:password@hoppscotch-postgres-svc:5432/hoppscotch
+  POSTGRES_DB: hoppscotch
+  POSTGRES_USER: postgres
+  POSTGRES_PASSWORD: password
   ENABLE_SUBPATH_BASED_ACCESS: "false"
   GITHUB_CALLBACK_URL: https://hoppscotch.oblivion.com/v1/auth/github/callback
   GITHUB_CLIENT_ID: '*****'
