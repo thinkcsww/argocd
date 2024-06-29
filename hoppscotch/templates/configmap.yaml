@@ -1,0 +1,45 @@
+apiVersion: v1
+data:
+  ACCESS_TOKEN_VALIDITY: "86400000"
+  DATABASE_URL: postgresql://postgres:password@hoppscotch-postgres-svc:5432/hoppscotch
+  ENABLE_SUBPATH_BASED_ACCESS: "false"
+  GITHUB_CALLBACK_URL: http://localhost:3170/v1/auth/github/callback
+  GITHUB_CLIENT_ID: '*****'
+  GITHUB_CLIENT_SECRET: '****'
+  GITHUB_SCOPE: user:email
+  GOOGLE_CALLBACK_URL: http://localhost:3170/v1/auth/google/callback
+  GOOGLE_CLIENT_ID: 1070047517322-238bvoh2pkdo3lqmesj2hqtiem7b7qat.apps.googleusercontent.com
+  GOOGLE_CLIENT_SECRET: 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
+  GOOGLE_SCOPE: email,profile
+  JWT_SECRET: secretcode123
+  MAGIC_LINK_TOKEN_VALIDITY: "3"
+  MAILER_ADDRESS_FROM: thinkcsw@gmail.com
+  MAILER_SMTP_URL: smtp://host.docker.internal:1025
+  MICROSOFT_CALLBACK_URL: http://localhost:3170/v1/auth/microsoft/callback
+  MICROSOFT_CLIENT_ID: '*****'
+  MICROSOFT_CLIENT_SECRET: '*****'
+  MICROSOFT_SCOPE: user.read
+  MICROSOFT_TENANT: common
+  RATE_LIMIT_MAX: "100"
+  RATE_LIMIT_TTL: "60"
+  REDIRECT_URL: http://localhost:30000
+  REFRESH_TOKEN_VALIDITY: "604800000"
+  SESSION_SECRET: anothersecretcode123
+  TOKEN_SALT_COMPLEXITY: "10"
+  VITE_ADMIN_URL: http://localhost:3100
+  VITE_ALLOWED_AUTH_PROVIDERS: GOOGLE,GITHUB,MICROSOFT,EMAIL
+  VITE_APP_PRIVACY_POLICY_LINK: https://docs.hoppscotch.io/support/privacy
+  VITE_APP_TOS_LINK: https://docs.hoppscotch.io/support/terms
+  VITE_BACKEND_API_URL: http://localhost:3170/v1
+  VITE_BACKEND_GQL_URL: http://localhost:3170/graphql
+  VITE_BACKEND_WS_URL: wss://localhost:3170/graphql
+  VITE_BASE_URL: http://localhost:30000
+  VITE_SHORTCODE_BASE_URL: http://localhost:30000
+  WHITELISTED_ORIGINS: http://hoppscotch.app.oblivion, https://hoppscotch.app.oblivion
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2024-06-29T12:15:32Z"
+  name: hoppscotch
+  namespace: gqms
+  resourceVersion: "3019829"
+  uid: dcb0b276-7dcf-4689-9eb2-bc7b45fba4fd
