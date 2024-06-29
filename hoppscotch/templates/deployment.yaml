@@ -119,7 +119,7 @@ spec:
       volumes:
         - name: data
           persistentVolumeClaim:
-            claimName: hoppscotch-postgres-pvc
+            claimName: hoppscotch-pvc
 
 --- 
 
