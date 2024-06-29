@@ -6,11 +6,11 @@ data:
   POSTGRES_USER: postgres
   POSTGRES_PASSWORD: password
   ENABLE_SUBPATH_BASED_ACCESS: "false"
-  GITHUB_CALLBACK_URL: https://hoppscotch.oblivion.com/v1/auth/github/callback
-  GITHUB_CLIENT_ID: '*****'
-  GITHUB_CLIENT_SECRET: '****'
+  GITHUB_CALLBACK_URL: https://hoppscotch-api.oblivion.com/v1/auth/github/callback
+  GITHUB_CLIENT_ID: Ov23li2fhZHDJXZ5VGLm
+  GITHUB_CLIENT_SECRET: 3cc7c7e2ca94aca77cdb839c7f3e369ada3d0957
   GITHUB_SCOPE: user:email
-  GOOGLE_CALLBACK_URL: https://hoppscotch.oblivion.com/v1/auth/google/callback
+  GOOGLE_CALLBACK_URL: https://hoppscotch-api.oblivion.com/v1/auth/google/callback
   GOOGLE_CLIENT_ID: 1070047517322-238bvoh2pkdo3lqmesj2hqtiem7b7qat.apps.googleusercontent.com
   GOOGLE_CLIENT_SECRET: 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
   GOOGLE_SCOPE: email,profile
@@ -18,7 +18,7 @@ data:
   MAGIC_LINK_TOKEN_VALIDITY: "3"
   MAILER_ADDRESS_FROM: thinkcsw@gmail.com
   MAILER_SMTP_URL: smtp://host.docker.internal:1025
-  MICROSOFT_CALLBACK_URL: https://hoppscotch.oblivion.com/v1/auth/microsoft/callback
+  MICROSOFT_CALLBACK_URL: https://hoppscotch-api.oblivion.com/v1/auth/microsoft/callback
   MICROSOFT_CLIENT_ID: '*****'
   MICROSOFT_CLIENT_SECRET: '*****'
   MICROSOFT_SCOPE: user.read
