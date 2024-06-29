@@ -30,13 +30,13 @@ spec:
             name: hoppscotch-backend-svc
             port:
               number: 3170
-  # - host: hoppscotch-admin.oblivion.com
-  #   http:
-  #     paths:
-  #     - path: /
-  #       pathType: ImplementationSpecific
-  #       backend:
-  #         service:
-  #           name: hoppscotch-admin-svc
-  #           port:
-  #             number: 3100
+  - host: hoppscotch-admin.oblivion.com
+    http:
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: hoppscotch-admin-svc
+            port:
+              number: 3100
