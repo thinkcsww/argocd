@@ -15,6 +15,7 @@ spec:
   selector:
     app: hoppscotch-frontend
 
+--- 
 apiVersion: v1
 kind: Service
 metadata:
@@ -31,9 +32,6 @@ spec:
       
   selector:
     app: hoppscotch-admin
-
-
---- 
 
 --- 
 
