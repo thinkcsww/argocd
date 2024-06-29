@@ -38,8 +38,5 @@ data:
   WHITELISTED_ORIGINS: http://hoppscotch.app.oblivion, https://hoppscotch.app.oblivion
 kind: ConfigMap
 metadata:
-  creationTimestamp: "2024-06-29T12:15:32Z"
   name: hoppscotch
   namespace: gqms
-  resourceVersion: "3019829"
-  uid: dcb0b276-7dcf-4689-9eb2-bc7b45fba4fd
