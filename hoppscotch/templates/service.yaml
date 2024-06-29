@@ -4,7 +4,7 @@ metadata:
   name: hoppscotch-frontend-svc
   namespace: gqms
   labels:
-    app: 
+    app: hoppscotch-frontend
 spec:
   ports:
     - name: hoppscotch-frontend-svc
