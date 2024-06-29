@@ -35,7 +35,7 @@ data:
   VITE_BACKEND_WS_URL: https://hoppscotch-api.oblivion.com/graphql
   VITE_BASE_URL: https://hoppscotch.oblivion.com
   VITE_SHORTCODE_BASE_URL: https://hoppscotch.oblivion.com
-  WHITELISTED_ORIGINS: http://hoppscotch.app.oblivion, https://hoppscotch.app.oblivion
+  WHITELISTED_ORIGINS: http://hoppscotch.oblivion.com, https://hoppscotch.oblivion.com
 kind: ConfigMap
 metadata:
   name: hoppscotch
