@@ -14,3 +14,23 @@ spec:
       
   selector:
     app: hoppscotch-frontend
+
+
+--- 
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: hoppscotch-backend-svc
+  namespace: gqms
+  labels:
+    app: 
+spec:
+  ports:
+    - name: hoppscotch-backend-svc
+      port: 3170
+      targetPort: 3170
+      protocol: TCP
+      
+  selector:
+    app: hoppscotch-backend

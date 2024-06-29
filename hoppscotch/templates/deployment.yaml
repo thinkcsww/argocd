@@ -25,6 +25,26 @@ spec:
             - name: http
               containerPort: 3000
               protocol: TCP
+--- 
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hoppscotch-backend
+  namespace: gqms
+  labels:
+    app: hoppscotch-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hoppscotch-backend
+  template:
+    metadata:
+      labels:
+        app: hoppscotch-backend
+    spec:
+      containers:
         - name: hoppscotch-backend
           image: hoppscotch/hoppscotch-backend
           envFrom:
@@ -34,6 +54,3 @@ spec:
             - name: http
               containerPort: 3170
               protocol: TCP
-        - name: my-nginx
-          image: curlimages/curl
-          command: ["sh", "-c", "sleep 10000000"]

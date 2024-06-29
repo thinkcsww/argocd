@@ -20,3 +20,13 @@ spec:
             name: hoppscotch-frontend-svc
             port:
               number: 3000
+  - host: hoppscotch-api.oblivion.com
+    http:
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: hoppscotch-backend-svc
+            port:
+              number: 3170
