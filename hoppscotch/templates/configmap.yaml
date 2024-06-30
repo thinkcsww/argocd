@@ -7,8 +7,8 @@ data:
   POSTGRES_PASSWORD: password
   ENABLE_SUBPATH_BASED_ACCESS: "false"
   GITHUB_CALLBACK_URL: https://hoppscotch-api.oblivion.com/v1/auth/github/callback
-  GITHUB_CLIENT_ID: Ov23li2fhZHDJXZ5VGLm
-  GITHUB_CLIENT_SECRET: 3cc7c7e2ca94aca77cdb839c7f3e369ada3d0957
+  GITHUB_CLIENT_ID: Ov23liwxJNDexcRJ9BGi
+  GITHUB_CLIENT_SECRET: 1e74f582b5bf0d2098ed952e2789926c8b44eca8
   GITHUB_SCOPE: user:email
   GOOGLE_CALLBACK_URL: https://hoppscotch-api.oblivion.com/v1/auth/google/callback
   GOOGLE_CLIENT_ID: 1070047517322-238bvoh2pkdo3lqmesj2hqtiem7b7qat.apps.googleusercontent.com
