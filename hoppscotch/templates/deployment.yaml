@@ -77,7 +77,7 @@ spec:
       containers:
         - name: hoppscotch-backend
           image: hoppscotch/hoppscotch-backend
-          # command: ["sh", "-c", "pnpx prisma migrate deploy"]
+          command: ["sh", "-c", "pnpx prisma migrate deploy"]
           envFrom:
             - configMapRef:
                 name: hoppscotch
