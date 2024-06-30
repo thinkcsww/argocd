@@ -11,8 +11,8 @@ data:
   GITHUB_CLIENT_SECRET: "1e74f582b5bf0d2098ed952e2789926c8b44eca8"
   GITHUB_SCOPE: user:email
   GOOGLE_CALLBACK_URL: https://hoppscotch-api.oblivion.com/v1/auth/google/callback
-  GOOGLE_CLIENT_ID: 1070047517322-238bvoh2pkdo3lqmesj2hqtiem7b7qat.apps.googleusercontent.com
-  GOOGLE_CLIENT_SECRET: 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
+  GOOGLE_CLIENT_ID: 164194722936-gih00eiqo53hlcigg6kejg5no8tbhqu8.apps.googleusercontent.com
+  GOOGLE_CLIENT_SECRET: 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
   GOOGLE_SCOPE: email,profile
   JWT_SECRET: secretcode123
   MAGIC_LINK_TOKEN_VALIDITY: "3"
